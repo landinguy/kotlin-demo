@@ -1,4 +1,12 @@
-server:
-  port: 8000
-  servlet:
-    context-path: /kotlin
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    cache-period: 0
+
+mybatis:
+  type-aliases-package: com.landinguy.kotlinDemo.pojo
+  mapper-locations: classpath:mapper/*Mapper.xml

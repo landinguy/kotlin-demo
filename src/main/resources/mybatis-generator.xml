@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- home -->
+    <classPathEntry location="C:\maven_repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>
+
+    <!-- company -->
+    <!--    <classPathEntry-->
+    <!--            location="D:\Application\mavenRepository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>-->
+
+    <context id="context1">
+        <!-- 去掉自动生成的注释 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/tw" driverClass="com.mysql.jdbc.Driver"
+                        password="root" userId="root"/>
+
+        <!-- bean-->
+        <javaModelGenerator targetPackage="com.landinguy.kotlinDemo.pojo" targetProject="src\main\kotlin"/>
+
+        <!-- xml -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src\main\resources"/>
+
+        <!-- dao -->
+        <javaClientGenerator targetPackage="com.landinguy.kotlinDemo.dao" targetProject="src\main\kotlin" type="XMLMAPPER"/>
+
+        <table tableName="user" domainObjectName="User" enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true">
+        </table>
+    </context>
+</generatorConfiguration>
